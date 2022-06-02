@@ -16,6 +16,10 @@ gem 'jbuilder'
 gem 'uglifier', '>= 1.3.0'
 gem 'bootsnap', require: false
 
+group :production do
+  gem 'pg'
+end
+
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
   gem 'byebug'
