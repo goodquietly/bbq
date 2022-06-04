@@ -1,13 +1,13 @@
   <h3>Авторизация</h3>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-floating mb-3">
+    <div class="form-floating mb-3 col-md-6">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", 
           placeholder: "name@example.com", id: "floatingInput", class: "form-control" %>
       <%= f.label :email, for: "floatingInput" %>
     </div>
 
-    <div class="form-floating mb-3">
+    <div class="form-floating mb-3 col-md-6">
       <%= f.password_field :password, autocomplete: "current-password", 
       class: "form-control", id: "floatingPassword", placeholder: "Password" %>
       <%= f.label :password, "Пароль", for: "floatingPassword" %>
@@ -21,8 +21,8 @@
       </div>
     <% end %>
 
-    <div class="actions mb-3 ">
-      <%= f.submit "Войти", class: 'btn btn-primary' %>
+    <div class="actions mb-3">
+      <%= f.submit "Войти", class: 'btn btn-primary mb-3' %>
     </div>
   <% end %>
 
