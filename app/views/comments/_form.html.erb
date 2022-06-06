@@ -1,0 +1,22 @@
+<%= form_for [@event, comment], data: {turbo: false} do |f| %>
+    <%= render partial: 'partials/form_errors', locals: {model: comment} %>
+
+    <div class="form-floating mb-3">
+      <%= f.text_area :body, autofocus: true, autocomplete: "body", 
+          placeholder: "Body", id: "floatingInput", class: "form-control" %>
+      <%= f.label :body, "Текст комментария", for: "floatingInput" %>
+
+    </div>
+
+    <% unless user_signed_in? %>
+      <div class="form-floating mb-3">
+        <%= f.text_field :user_name, autofocus: true, autocomplete: "user_name", 
+          placeholder: "Name", id: "floatingInput", class: "form-control" %>
+        <%= f.label :user_name, "Имя пользователя", for: "floatingInput" %>
+      </div>
+    <% end %>
+
+    <div class="actions mb-3">
+      <%= f.submit 'Отправить', class: 'btn btn-primary' %>
+    </div>
+  <% end %>

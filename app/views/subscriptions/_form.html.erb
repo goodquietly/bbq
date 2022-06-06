@@ -1,0 +1,21 @@
+<%= form_for [@event, subscription], data: {turbo: false} do |f| %>
+    <%= render partial: 'partials/form_errors', locals: {model: subscription} %>
+
+    <% unless user_signed_in? %>
+      <div class="form-floating mb-2">
+        <%= f.text_field :user_name, autofocus: true, autocomplete: "user_name", 
+          placeholder: "Name", id: "floatingInput", class: "form-control" %>
+        <%= f.label :user_name, "Имя пользователя", for: "floatingInput" %>
+      </div>
+
+      <div class="form-floating mb-2">
+        <%= f.text_field :user_email, autofocus: true, autocomplete: "user_email", 
+          placeholder: "Email", id: "floatingInput", class: "form-control" %>
+        <%= f.label :user_email, "Email пользователя", for: "floatingInput" %>
+      </div>
+    <% end %>
+
+    <div class="actions mb-3">
+      <%= f.submit 'Подписаться', class: 'btn btn-primary' %>
+    </div>
+  <% end %>

@@ -22,4 +22,8 @@ module ApplicationHelper
   def user_avatar(_user)
     asset_path('user.png')
   end
+
+  def fa_icon(icon_class)
+    content_tag 'i', '', class: "fa-solid fa-#{icon_class}"
+  end
 end
