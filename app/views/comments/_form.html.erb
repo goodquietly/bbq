@@ -3,9 +3,8 @@
 
     <div class="form-floating mb-3">
       <%= f.text_area :body, autofocus: true, autocomplete: "body", 
-          placeholder: "Body", id: "floatingInput", class: "form-control" %>
-      <%= f.label :body, "Текст комментария", for: "floatingInput" %>
-
+          placeholder: "Leave a comment here", id: "floatingTextarea2", class: "form-control" %>
+      <%= f.label :body, "Текст комментария", for: "floatingTextarea2" %>
     </div>
 
     <% unless user_signed_in? %>

@@ -24,6 +24,6 @@ module ApplicationHelper
   end
 
   def fa_icon(icon_class)
-    content_tag 'i', '', class: "fa-solid fa-#{icon_class}"
+    content_tag 'i', '', class: "text-danger bi bi-#{icon_class}"
   end
 end

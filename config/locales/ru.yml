@@ -1,12 +1,9 @@
 ru:
-  # Перевод моделей
   activerecord:
-    # Перевод названия моделей
     models:
       user: 'Пользователь'
       event: 'Событие'
 
-    # Перевод атрибутов моделей
     attributes:
       user:
         email: 'Email'
@@ -43,11 +40,10 @@ ru:
       few: '%{count} ошибки'
       many: '%{count} ошибок'
     are_you_sure: 'Вы точно хотите удалить это мероприятие?'
-
-  comments:
-    comment:
-      destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
-
-  subscriptions:
-    subscription:
-      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+    views:
+      comments:
+        comment:
+          destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
+      subscriptions:
+        subscription:
+          destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'

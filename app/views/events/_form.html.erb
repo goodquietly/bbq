@@ -1,14 +1,16 @@
 <%= form_for @event, data: {turbo: false} do |f| %>
     <%= render partial: 'partials/form_errors', locals: {model: @event} %>
 
-    <div class="form-group">
-      <%= f.label :title %>
-      <%= f.text_field :title, class: 'form-control' %>
+    <div class="form-floating mb-3">
+      <%= f.text_field :title, autofocus: true, autocomplete: "title", 
+          placeholder: "Title", id: "floatingInput", class: "form-control" %>
+      <%= f.label :title, "Наименование мероприятия", for: "floatingInput" %>
     </div>
 
-    <div class="form-group">
-      <%= f.label :address %>
-      <%= f.text_field :address, class: 'form-control' %>
+    <div class="form-floating mb-3">
+      <%= f.text_field :address, autofocus: true, autocomplete: "address", 
+          placeholder: "Address", id: "floatingInput", class: "form-control" %>
+      <%= f.label :address, "Место проведения", for: "floatingInput" %>
     </div>
 
     <div class="form-group">
@@ -16,13 +18,17 @@
       <p><%= f.datetime_select :datetime, class: 'form-control' %></p>
     </div>
 
-    <div class="form-group">
-      <%= f.label :description %>
-      <%= f.text_area :description, class: 'form-control' %>
+    <div class="form-floating mb-3">
+      <%= f.text_area :description, autofocus: true, autocomplete: "description", 
+          placeholder: "Leave a description here", id: "floatingTextarea2", class: "form-control" %>
+      <%= f.label :description, for: "floatingTextarea2" %>
     </div>
 
-    <div class="actions">
+    <div class="actions mb-3">
       <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
-      или <%= link_to 'вернуться', :back %>
+    </div>
+
+    <div class="actions mb-3">
+      <%= link_to 'Вернуться', :back, class: 'btn btn-success mb-3' %>
     </div>
   <% end %>
