@@ -14,6 +14,8 @@ gem 'jsbundling-rails'
 gem 'turbo-rails'
 gem 'stimulus-rails'
 gem 'cssbundling-rails'
+gem 'carrierwave'
+gem 'rmagick'
 gem 'jbuilder'
 gem 'uglifier', '>= 1.3.0'
 gem 'bootsnap', require: false

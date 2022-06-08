@@ -1,0 +1,12 @@
+<%= form_for [@event, photo], data: {turbo: false}, html: { multipart: true } do |f| %>
+    <%= render partial: 'partials/form_errors', locals: {model: photo} %>
+
+    <div class="form-group mb-3">
+      <%= f.label :photo, class: "form-label", for: "customFile" %>
+      <%= f.file_field :photo, type: "file", class: "form-control", id: "customFile" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Загрузить', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
