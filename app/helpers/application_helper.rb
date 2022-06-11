@@ -28,7 +28,7 @@ module ApplicationHelper
   end
 
   def user_avatar_thumb(user)
-    if user.avatar.file.present?
+    if user.avatar.attached?
       user.avatar.variant(:thumb)
     else
       asset_path('user.png')
