@@ -18,6 +18,10 @@ class User < ApplicationRecord
     attachable.variant :thumb_big, resize_to_limit: [400, 400]
   end
 
+  validates :avatar, file_size: { less_than_or_equal_to: 4.megabytes, message: 'Please Check File Size' },
+                     file_content_type: { allow: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'],
+                                          message: 'Please Check File Format' }
+
   private
 
   def set_name
