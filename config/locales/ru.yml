@@ -4,6 +4,9 @@ ru:
       user: 'Пользователь'
       event: 'Событие'
       photo: 'Фотография'
+      errors:
+        event_owner: 'Вы создатель мероприятия!'
+        email_is_busy: 'Такая почта уже закреплена за пользователем'
 
     attributes:
       user:
@@ -42,16 +45,37 @@ ru:
 
   app:
     name: 'Шашлыки'
+
     company: 'Хороший программист'
+
     errors:
       one: '%{count} ошибка'
       few: '%{count} ошибки'
       many: '%{count} ошибок'
+
     are_you_sure: 'Вы точно хотите удалить это мероприятие?'
+
     views:
       comments:
         comment:
           destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
+
       subscriptions:
         subscription:
           destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+
+      event_mailer:
+        comment:
+          title: 'Новый комментарий'
+          author: 'Автор'
+          event: 'Событие'
+          datetime: 'Состоится'
+          owner: 'Организатор'
+        subscription:
+          title: 'Новая подписка'
+          name: 'Имя'
+          email: 'Email'
+          author: 'Автор'
+          event: 'Событие'
+          datetime: 'Состоится'
+          owner: 'Организатор'
