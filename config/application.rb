@@ -15,6 +15,8 @@ module Bbq
 
     config.active_storage.variant_processor = :MiniMagick
 
+    config.action_mailer.delivery_method = :mailjet_api
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
