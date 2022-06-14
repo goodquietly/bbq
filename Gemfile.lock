@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/mailjet/mailjet-gem.git
+  revision: 5fa184375b4e7eaa8da078734161213a96a321bc
+  specs:
+    mailjet (1.7.0)
+      activesupport (>= 3.1.0)
+      rack (>= 1.4.0)
+      rest-client (>= 2.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -123,6 +132,12 @@ GEM
     devise-i18n (1.10.2)
       devise (>= 4.8.0)
     digest (3.1.0)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.8.1)
     ffi (1.15.5)
@@ -131,6 +146,9 @@ GEM
       mime-types (>= 1.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    http-accept (1.7.0)
+    http-cookie (1.0.5)
+      domain_name (~> 0.5)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -178,6 +196,7 @@ GEM
       digest
       net-protocol
       timeout
+    netrc (0.11.0)
     nio4r (2.5.8)
     nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
@@ -226,6 +245,11 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rexml (3.2.5)
     rmagick (4.2.5)
     ruby-vips (2.1.4)
@@ -258,6 +282,9 @@ GEM
       concurrent-ruby (~> 1.0)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.8.2)
     warden (1.2.9)
       rack (>= 2.0.9)
     webdrivers (5.0.0)
@@ -285,11 +312,13 @@ DEPENDENCIES
   debug
   devise
   devise-i18n
+  dotenv-rails
   file_validators
   image_processing (~> 1.2)
   jbuilder
   jquery-rails
   jsbundling-rails
+  mailjet!
   pg
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.4)
