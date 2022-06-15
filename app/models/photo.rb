@@ -3,7 +3,7 @@ class Photo < ApplicationRecord
   belongs_to :user
 
   has_one_attached :photo do |attachable|
-    attachable.variant :thumb, resize_to_limit: [500, 500]
+    attachable.variant :thumb, resize_to_limit: [400, 1000]
   end
 
   validates :photo, file_size: { less_than_or_equal_to: 4.megabytes, message: 'Please Check File Size' },
