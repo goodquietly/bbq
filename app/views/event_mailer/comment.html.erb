@@ -1,15 +1,24 @@
   
-  <h1><%= I18n.t('app.views.event_mailer.comment.title') %></h1>
+  <h1><%= t('.title') %></h1>
   <p><%= @comment.body %></p>
-  <p><%= I18n.t('app.views.event_mailer.comment.author') %>: <strong><%= @comment.user_name %></strong></p>
+  <p><%= t('.author') %>: 
+    <strong>
+      <% if @comment.user.present?%>
+        <%= link_to @comment.user_name, user_url(@comment.user) %>
+      <% else %>
+        <strong><%= @comment.user_name %></strong>
+      <% end %>
+    </strong>
+  </p>
 
   <hr/>
 
-  <%= I18n.t('app.views.event_mailer.comment.event') %>
-  <h3><%= @event.title %></h3>
+  <%= t('.event') %>
+  <h3><strong><%= link_to @event.title, event_url(@event) %></strong>
+  </h3>
 
-  <%= I18n.t('app.views.event_mailer.comment.datetime') %>
-  <h4><%= l(@event.datetime) %></h4>
+  <%= t('.datetime') %>
+  <h4><%= l(@event.datetime, format: :short) %></h4>
 
-  <%= I18n.t('app.views.event_mailer.comment.owner') %>
-  <h4><%= @event.user.name %></h4>
+  <%= t('.owner') %>
+  <h4><%= link_to @event.user.name, user_url(@event.user) %></h4>

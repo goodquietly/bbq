@@ -1,15 +1,15 @@
-  
-  <h1><%= I18n.t('app.views.event_mailer.subscription.title') %></h1>
-  <p><%= I18n.t('app.views.event_mailer.subscription.name') %>: <strong><%= @name %></strong></p>
-  <p><%= I18n.t('app.views.event_mailer.subscription.email') %>: <strong><%= link_to @email, "mailto:#{@email}" %></strong></p>
+  <h1><%= t('.title') %></h1>
+  <p><%= t('.name') %>: <strong><%= @name %></strong></p>
+  <p><%= t('.email') %>: <strong><%= link_to @email, "mailto:#{@email}" %></strong></p>
   <hr/>
 
-  <%= I18n.t('app.views.event_mailer.subscription.event') %>
+  <%= t('.event') %>
 
-  <h3><%= @event.title %></h3>
+  <h3><strong><%= link_to @event.title, event_url(@event) %></strong>
+  </h3>
 
-  <%= I18n.t('app.views.event_mailer.subscription.datetime') %>
-  <h4><%= l(@event.datetime) %></h4>
+  <%= t('.datetime') %>
+  <h4><%= l(@event.datetime, format: :short) %></h4>
 
-  <%= I18n.t('app.views.event_mailer.subscription.owner') %>
-  <h4><%= @event.user.name %></h4>
+  <%= t('.owner') %>
+  <h4><%= link_to @event.user.name, user_url(@event.user) %></h4>
