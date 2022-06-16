@@ -2,7 +2,7 @@
 
   <% if errors.any? %>
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-      <strong>В вашей форме <%= I18n.t('app.errors', count: errors.count) %></strong>
+      <strong><%= t('app.errors', count: errors.count) %></strong>
 
       <ul>
         <% errors.full_messages.each do |message| %>

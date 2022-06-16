@@ -52,9 +52,9 @@ ru:
     company: 'Хороший программист'
 
     errors:
-      one: '%{count} ошибка'
-      few: '%{count} ошибки'
-      many: '%{count} ошибок'
+      one: 'В вашей форме %{count} ошибка'
+      few: 'В вашей форме %{count} ошибки'
+      many: 'В вашей форме %{count} ошибок'
 
     are_you_sure: 'Вы точно хотите удалить это мероприятие?'
 
@@ -67,6 +67,9 @@ ru:
         destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
 
     subscriptions:
+      user_name: 'Имя пользователя'
+      user_email: 'Email пользователя'
+      submit: 'Подписаться'
       subscription:
         destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
 
@@ -86,6 +89,19 @@ ru:
       invites: 'Приглашает:'
       will_come: 'Пойдут:'
       i_will_go: 'Я пойду:'
+
+    photos:
+      download: 'Загрузить'
+      downloader: 'Добавил'
+
+    users:
+      save: 'Сохранить'
+      back: 'Назад'
+      change_password: 'Сменить пароль'
+      edit_title: 'Редактирование профиля'
+      edit_profile: 'Редактировать профиль'
+      organized: 'Организовал:'
+      did_not_organize_anything: 'Пользователь пока не организовал ни одного события'
 
   event_mailer:
     comment:
