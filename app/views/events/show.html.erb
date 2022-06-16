@@ -16,9 +16,9 @@
             </div>
             <% if current_user_can_edit?(@event) %>
               <div class="buffer-both">
-                <%= link_to 'Изменить', edit_event_path(@event), class: 'btn btn-primary mb-3' %>
-                <%= button_to 'Удалить', event_path(@event), method: :delete, class: 'btn btn-danger',
-                    title: 'Удалить событие', form: {data: {turbo_confirm: t('app.are_you_sure')}} %>
+                <%= link_to t('views.events.edit'), edit_event_path(@event), class: 'btn btn-primary mb-3' %>
+                <%= button_to t('views.events.delete'), event_path(@event), method: :delete, class: 'btn btn-danger',
+                    title: t('views.events.delete_event'), form: {data: {turbo_confirm: t('app.are_you_sure')}} %>
               </div>
             <% end %>
           </div>
@@ -52,11 +52,11 @@
 
       <div class="col-md-4">
         <div class="event-owner">
-          <h4>Зовет:</h4>
+          <h4><%= t('views.events.invites') %></h4>
           <p><%= render partial: 'users/user', object: @event.user %></p>
         </div>
         <div class="event-subscriptions">
-          <h4>Пойдут:</h4>
+          <h4><%= t('views.events.will_come') %></h4>
           <div>
             <p>
               <%= render partial: 'subscriptions/subscription', 
@@ -67,7 +67,7 @@
 
         <%unless current_user == @event.user %>
           <div class="event-subscription-form">
-            <h4>Я пойду:</h4>
+            <h4><%= t('views.events.i_will_go') %></h4>
             <div>
               <%= render partial: 'subscriptions/form', 
                          locals: { subscription: @new_subscription || @event.subscriptions.build } %>

@@ -45,7 +45,10 @@ ru:
 
   app:
     name: 'Шашлыки'
-
+    profile: 'Профиль'
+    exit: 'Выйти'
+    sign_in: 'Войти'
+    sign_up: 'Зарегистрироваться'
     company: 'Хороший программист'
 
     errors:
@@ -57,6 +60,9 @@ ru:
 
   views:
     comments:
+      body: 'Текст комментария'
+      user_name: 'Имя пользователя'
+      submit: 'Отправить'
       comment:
         destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
 
@@ -67,6 +73,19 @@ ru:
     devise:
       registrations:
         edit_title: 'Редактирование профиля'
+
+    events:
+      new_event: 'Создать событие'
+      events: 'События'
+      back: 'Вернуться'
+      save: 'Сохранить'
+      edit: 'Изменить'
+      delete: 'Удалить'
+      delete_event: 'Удалить событие'
+      edit_title: 'Редактирование события'
+      invites: 'Приглашает:'
+      will_come: 'Пойдут:'
+      i_will_go: 'Я пойду:'
 
   event_mailer:
     comment:

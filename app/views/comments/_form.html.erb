@@ -4,18 +4,18 @@
     <div class="form-floating mb-3">
       <%= f.text_area :body, autofocus: true, autocomplete: "body", 
           placeholder: "Leave a comment here", id: "floatingTextarea2", class: "form-control" %>
-      <%= f.label :body, "Текст комментария", for: "floatingTextarea2" %>
+      <%= f.label :body, t('views.comments.body'), for: "floatingTextarea2" %>
     </div>
 
     <% unless user_signed_in? %>
       <div class="form-floating mb-3">
         <%= f.text_field :user_name, autofocus: true, autocomplete: "user_name", 
           placeholder: "Name", id: "floatingInput", class: "form-control" %>
-        <%= f.label :user_name, "Имя пользователя", for: "floatingInput" %>
+        <%= f.label :user_name, t('views.comments.user_name'), for: "floatingInput" %>
       </div>
     <% end %>
 
     <div class="actions mb-3">
-      <%= f.submit 'Отправить', class: 'btn btn-primary' %>
+      <%= f.submit t('views.comments.submit'), class: 'btn btn-primary' %>
     </div>
   <% end %>
