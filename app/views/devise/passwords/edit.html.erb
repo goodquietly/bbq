@@ -1,4 +1,3 @@
-  
   <h2><%= t('.change_your_password') %></h2>
 
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
@@ -11,7 +10,7 @@
       <% if @minimum_password_length %>
         <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em><br />
       <% end %>
-      <%= f.label :password, "Введите пароль", for: "floatingPassword" %>
+      <%= f.label :password, t('.new_password'), for: "floatingPassword" %>
     </div>
 
     <div class="form-floating mb-3 col-md-6">

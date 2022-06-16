@@ -55,14 +55,18 @@ ru:
 
     are_you_sure: 'Вы точно хотите удалить это мероприятие?'
 
-    views:
-      comments:
-        comment:
-          destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
+  views:
+    comments:
+      comment:
+        destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
 
-      subscriptions:
-        subscription:
-          destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+    subscriptions:
+      subscription:
+        destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+
+    devise:
+      registrations:
+        edit_title: 'Редактирование профиля'
 
   event_mailer:
     comment:

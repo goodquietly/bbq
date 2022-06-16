@@ -1,4 +1,4 @@
-  <h3>Авторизация</h3>
+  <h3><%= t('.sign_in') %></h3>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-floating mb-3 col-md-6">
@@ -10,19 +10,19 @@
     <div class="form-floating mb-3 col-md-6">
       <%= f.password_field :password, autocomplete: "current-password", 
       class: "form-control", id: "floatingPassword", placeholder: "Password" %>
-      <%= f.label :password, "Пароль", for: "floatingPassword" %>
+      <%= f.label :password, for: "floatingPassword" %>
     </div>
 
     <% if devise_mapping.rememberable? %>
       <div class="mb-3 form-check">
         <%= f.check_box :remember_me, checked: true, class: "form-check-input", type: "checkbox",
          value: "", id: "flexCheckChecked", checked: true %>
-        <%= f.label :remember_me, "Запомнить меня", class: "form-check-label", for: "flexCheckChecked" %>
+        <%= f.label :remember_me, class: "form-check-label", for: "flexCheckChecked" %>
       </div>
     <% end %>
 
     <div class="actions mb-3">
-      <%= f.submit "Войти", class: 'btn btn-primary mb-3' %>
+      <%= f.submit t('.sign_in'), class: 'btn btn-primary mb-3' %>
     </div>
   <% end %>
 

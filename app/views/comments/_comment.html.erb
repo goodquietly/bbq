@@ -1,3 +1,4 @@
+  
   <div class="p-3 border bg-light mb-2">
     <p><%= comment.body %></p>
     <p class="d-inline">
@@ -12,7 +13,7 @@
       <% if current_user_can_edit?(comment) %>
         <%= button_to fa_icon('trash-fill'),
                     event_comment_path(comment.event, comment),
-                    form: {data: {turbo_confirm: t('app.views.comments.comment.destroy_confirm')}},
+                    form: {data: {turbo_confirm: t('views.comments.comment.destroy_confirm')}},
                     method: :delete,
                     class: 'btn',
                     form_class: 'd-inline'
