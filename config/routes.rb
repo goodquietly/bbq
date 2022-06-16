@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :comments
   devise_for :users
 
+  get '/users', to: 'static_pages#users'
+
   root to: 'events#index'
 
   resources :events do
