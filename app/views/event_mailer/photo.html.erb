@@ -8,11 +8,11 @@
   <hr/>
 
   <%= t('.event') %>
-  <h3><strong><%= link_to @event.title, event_url(@event) %></strong>
+  <h3><strong><%= link_to @photo.event.title, event_url(@photo.event) %></strong>
   </h3>
 
   <%= t('.datetime') %>
-  <h4><%= l(@event.datetime, format: :short) %></h4>
+  <h4><%= l(@photo.event.datetime, format: :short) %></h4>
 
   <%= t('.owner') %>
-  <h4><%= link_to @event.user.name, user_url(@event.user) %></h4>
+  <h4><%= link_to @photo.event.user.name, user_url(@photo.event.user) %></h4>

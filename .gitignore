@@ -19,6 +19,7 @@
 .idea
 public/uploads
 .env
+.byebug_history
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*

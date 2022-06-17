@@ -125,10 +125,10 @@ ru:
       title: 'Новая фотография'
       author: 'Автор'
       event: 'Событие'
-      datetime: 'Состоится'
+      datetime: 'Время проведения'
       owner: 'Организатор'
 
   mailer:
     new_subscription: 'Новая подписка на'
     new_comment: 'Новый комментарий @'
-    new_photo: 'Новое фото в'
+    new_photo: 'Новое фото в %{event_title}'
