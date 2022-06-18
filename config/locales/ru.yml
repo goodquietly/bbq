@@ -23,6 +23,7 @@ ru:
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
+        pincode: 'Пин-код доступа'
       photo:
         photo: 'Фотография'
 
@@ -31,6 +32,7 @@ ru:
       created: 'Вы создали новое мероприятие'
       updated: 'Вы обновили мероприятие'
       destroyed: 'Вы удалили мероприятие :('
+      wrong_pincode: 'Неверный пин-код!'
     users:
       updated: 'Вы обновили свой профиль'
     comments:
@@ -92,6 +94,10 @@ ru:
       invites: 'Приглашает:'
       will_come: 'Пойдут:'
       i_will_go: 'Я пойду:'
+      pincode_only: 'Доступ только по пин-коду'
+      pincode: 'Пин-код'
+      enter: 'Ввод'
+      to_main: 'На главную'
 
     photos:
       download: 'Загрузить'

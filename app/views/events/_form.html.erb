@@ -24,6 +24,12 @@
       <%= f.label :description, for: "floatingTextarea2" %>
     </div>
 
+    <div class="form-group">
+      <%= f.text_field :pincode, autofocus: true, autocomplete: "pincode", 
+          placeholder: "Leave a pincode here", id: "floatingInput", class: "form-control" %>
+      <%= f.label :pincode, for: "floatingInput" %>
+    </div>
+
     <div class="actions mb-3">
       <%= f.submit t('views.events.save'), class: 'btn btn-primary' %>
     </div>
