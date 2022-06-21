@@ -3,13 +3,13 @@
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-floating mb-3 col-md-6">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", 
-          placeholder: "name@example.com", id: "floatingInput", class: "form-control" %>
+          placeholder: t('views.devise.email'), id: "floatingInput", class: "form-control" %>
       <%= f.label :email, for: "floatingInput" %>
     </div>
 
     <div class="form-floating mb-3 col-md-6">
       <%= f.password_field :password, autocomplete: "current-password", 
-      class: "form-control", id: "floatingPassword", placeholder: "Password" %>
+      class: "form-control", id: "floatingPassword", placeholder: t('views.devise.password') %>
       <%= f.label :password, for: "floatingPassword" %>
     </div>
 

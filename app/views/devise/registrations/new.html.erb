@@ -5,19 +5,19 @@
 
     <div class="form-floating mb-3 col-md-6">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", 
-          placeholder: "name@example.com", id: "floatingInput", class: "form-control" %>
+          placeholder: t('views.devise.email'), id: "floatingInput", class: "form-control" %>
       <%= f.label :email, for: "floatingInput" %>
     </div>
 
     <div class="form-floating mb-3 col-md-6">
       <%= f.text_field :name, autofocus: true, autocomplete: "name", 
-          placeholder: "Name", id: "floatingInput", class: "form-control" %>
+          placeholder: t('views.devise.name'), id: "floatingInput", class: "form-control" %>
       <%= f.label :name, for: "floatingInput" %>
     </div>
 
     <div class="form-floating mb-3 col-md-6">
       <%= f.password_field :password, autocomplete: "new-password", 
-      class: "form-control", id: "floatingPassword", placeholder: "Password" %>
+      class: "form-control", id: "floatingPassword", placeholder: t('views.devise.password') %>
       <% if @minimum_password_length %>
         <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
       <% end %><br />
@@ -26,7 +26,7 @@
 
     <div class="form-floating mb-3 col-md-6">
       <%= f.password_field :password_confirmation, autocomplete: "new-password", 
-      class: "form-control", id: "floatingPassword", placeholder: "Password" %>
+      class: "form-control", id: "floatingPassword", placeholder: t('views.devise.password') %>
       <%= f.label :password_confirmation, for: "floatingPassword" %>
     </div>
 

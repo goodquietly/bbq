@@ -68,6 +68,9 @@ ru:
       body: 'Текст комментария'
       user_name: 'Имя пользователя'
       submit: 'Отправить'
+      leave_a_comment: 'Оставьте комментарий здесь'
+      leave_a_username: 'Оставьте Ваше имя здесь'
+
       comment:
         destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
 
@@ -79,8 +82,10 @@ ru:
         destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
 
     devise:
-      registrations:
-        edit_title: 'Редактирование профиля'
+      edit_title: 'Редактирование профиля'
+      password: 'Пароль'
+      name: 'Имя'
+      email: 'name@example.com'
 
     events:
       new_event: 'Создать событие'
@@ -98,6 +103,8 @@ ru:
       pincode: 'Пин-код'
       enter: 'Ввод'
       to_main: 'На главную'
+      leave_a_description: 'Оставьте описание здесь'
+      leave_a_pincode: 'Оставьте Пинкод здесь'
 
     photos:
       download: 'Загрузить'

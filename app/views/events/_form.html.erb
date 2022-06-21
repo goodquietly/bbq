@@ -3,13 +3,13 @@
 
     <div class="form-floating mb-3">
       <%= f.text_field :title, autofocus: true, autocomplete: "title", 
-          placeholder: "Title", id: "floatingInput", class: "form-control" %>
+          placeholder: t('activerecord.attributes.event.title'), id: "floatingInput", class: "form-control" %>
       <%= f.label :title, for: "floatingInput" %>
     </div>
 
     <div class="form-floating mb-3">
       <%= f.text_field :address, autofocus: true, autocomplete: "address", 
-          placeholder: "Address", id: "floatingInput", class: "form-control" %>
+          placeholder: t('activerecord.attributes.event.address'), id: "floatingInput", class: "form-control" %>
       <%= f.label :address, for: "floatingInput" %>
     </div>
 
@@ -20,13 +20,13 @@
 
     <div class="form-floating mb-3">
       <%= f.text_area :description, autofocus: true, autocomplete: "description", 
-          placeholder: "Leave a description here", id: "floatingTextarea2", class: "form-control" %>
+          placeholder: t('views.events.leave_a_description'), id: "floatingTextarea2", class: "form-control" %>
       <%= f.label :description, for: "floatingTextarea2" %>
     </div>
 
     <div class="form-floating mb-3">
       <%= f.text_field :pincode, autofocus: true, autocomplete: "pincode", 
-          placeholder: "Leave a pincode here", id: "floatingInput", class: "form-control" %>
+          placeholder: t('views.events.leave_a_pincode'), id: "floatingInput", class: "form-control" %>
       <%= f.label :pincode, for: "floatingInput" %>
     </div>
 

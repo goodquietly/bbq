@@ -3,13 +3,13 @@
 
     <div class="form-floating mb-3">
       <%= f.text_field :name, autofocus: true, autocomplete: "name", 
-          placeholder: "Name", id: "floatingInput", class: "form-control" %>
+          placeholder: t('views.devise.name'), id: "floatingInput", class: "form-control" %>
       <%= f.label :name, for: "floatingInput" %>
     </div>
 
     <div class="form-floating mb-3">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", 
-          placeholder: "name@example.com", id: "floatingInput", class: "form-control" %>
+          placeholder: t('views.devise.email'), id: "floatingInput", class: "form-control" %>
       <%= f.label :email, for: "floatingInput" %>
     </div>
 
