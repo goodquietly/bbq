@@ -135,6 +135,6 @@ ru:
       owner: 'Организатор'
 
   mailer:
-    new_subscription: 'Новая подписка на'
-    new_comment: 'Новый комментарий @'
+    new_subscription: 'Новая подписка на %{event_title}'
+    new_comment: 'Новый комментарий @ %{event_title}'
     new_photo: 'Новое фото в %{event_title}'
