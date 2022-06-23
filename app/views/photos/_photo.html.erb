@@ -1,6 +1,19 @@
   
-  <div class="event-photo buffer-both">
-    <%= link_to image_tag(photo.photo.variant(:thumb)), photo.photo.url %>
+  <div class="event-photo col-md-2 mb-3 align-self-end ps-1">
 
-    <%= t('views.photos.downloader') %><%= render partial: 'users/user', object: photo.user %>
+   <div class="card">
+     <%#= link_to image_tag(photo.photo.variant(:thumb)), photo.photo.url %>
+      
+      <a data-fslightbox class="ripple" href="<%= photo.photo.url %>">
+        <%= image_tag(photo.photo.variant(:thumb), class: "card-img-top") %>
+      </a>
+      <div class="card-body">
+        <p class="card-subtitle"><%= t('views.photos.downloader') %></p>
+        <p class="card-text">
+          <%= render partial: 'users/user', object: photo.user %>
+        </p>      
+      </div>
+    </div>
   </div>
+  
+
