@@ -2,9 +2,11 @@
   <div class="event-photo col-md-2 mb-3 align-self-end ps-1">
 
    <div class="card">
-     <%#= link_to image_tag(photo.photo.variant(:thumb)), photo.photo.url %>
       
-      <a data-fslightbox class="ripple" href="<%= photo.photo.url %>">
+      <a 
+        data-fslightbox
+        class="ripple" 
+        href="<%= photo.photo.url %>">
         <%= image_tag(photo.photo.variant(:thumb), class: "card-img-top") %>
       </a>
       <div class="card-body">
