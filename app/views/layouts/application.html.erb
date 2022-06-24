@@ -17,9 +17,9 @@
           <div class="container-fluid justify-content-start">
             <%= link_to t('app.name'), root_path, class: 'btn btn-outline-success me-2' %>
             <% if user_signed_in? %>
-              <%= link_to t('app.profile'), current_user, class: 'btn btn-sm btn-outline-secondary me-2' %>
+              <%= link_to t('app.profile'), current_user, class: 'btn btn-sm btn-outline-secondary me-2', data: { turbo: false } %>
               <%= button_to t('app.exit'), destroy_user_session_path, class: 'btn btn-sm btn-outline-secondary me-2',
-                          method: :delete %>
+                          method: :delete, data: { turbo: false } %>
             <% else %>
               <%= link_to t('app.sign_in'), new_user_session_path, class: 'btn btn-sm btn-outline-secondary me-2' %>
               <%= link_to t('app.sign_up'), new_user_registration_path, 
