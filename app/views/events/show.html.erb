@@ -66,25 +66,31 @@
             <div class="card-header"><%= t('views.events.invites') %></div>
             <p class="mb-0 mt-3"><%= render partial: 'users/user', object: @event.user %></p>
           </div>
+
           <div class="p-2 event-subscriptions">
             <div class="card-header"><%= t('views.events.will_come') %></div>          
-            <div>
-              <p>
-                <%= render partial: 'subscriptions/subscription', 
-                  collection: @event.subscriptions.except(@new_subscription) %>
-              </p>
+            <div class="card-body">
+
+              <% unless @event.subscriptions.except(@new_subscription).empty? %>
+                <p class="card-text">
+                  <%= render partial: 'subscriptions/subscription', 
+                      collection: @event.subscriptions.except(@new_subscription) %>
+                </p>
+              <% else %>
+                <p class="card-text"><%= t('views.events.empty') %></p>
+              <% end %>
+
             </div>
           </div>
-
-          <%unless current_user == @event.user || @event.subscribers.include?(current_user) %>
+          
+          <% unless current_user == @event.user || @event.subscribers.include?(current_user) %>
             <div class="p-2 event-subscription-form">
               <div class="card-header mb-3"><%= t('views.events.i_will_go') %></div>
-              <div>
                 <%= render partial: 'subscriptions/form', 
                          locals: { subscription: @new_subscription || @event.subscriptions.build } %>
-              </div>
             </div>
-          <% end%>
+          <% end %>
+
         </div>
       </div>
     </div>
