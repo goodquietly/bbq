@@ -18,9 +18,8 @@ class User < ApplicationRecord
     attachable.variant :thumb_big, resize_to_limit: [400, 400]
   end
 
-  validates :avatar, file_size: { less_than_or_equal_to: 4.megabytes, message: I18n.t('activerecord.models.file_size') },
-                     file_content_type: { allow: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'],
-                                          message: I18n.t('activerecord.models.file_type') }
+  validates :avatar, file_size: { less_than_or_equal_to: 2.megabytes },
+                     file_content_type: { allow: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'] }
 
   private
 

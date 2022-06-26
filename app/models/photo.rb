@@ -6,9 +6,8 @@ class Photo < ApplicationRecord
     attachable.variant :thumb, resize_to_limit: [200, 200]
   end
 
-  validates :photo, presence: true, file_size: { less_than_or_equal_to: 4.megabytes, message: I18n.t('activerecord.models.file_size') },
-                    file_content_type: { allow: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'],
-                                         message: I18n.t('activerecord.models.file_type') }
+  validates :photo, presence: true, file_size: { less_than_or_equal_to: 4.megabytes },
+                    file_content_type: { allow: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'] }
 
   scope :persisted, -> { where 'id IS NOT NULL' }
 end
