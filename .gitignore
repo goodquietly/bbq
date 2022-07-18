@@ -6,6 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
+/.vscode
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -20,6 +21,7 @@
 public/uploads
 .env
 .byebug_history
+/config/database.yml
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
