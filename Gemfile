@@ -24,7 +24,7 @@ gem 'rmagick'
 gem 'jbuilder'
 gem 'uglifier', '>= 1.3.0'
 gem 'bootsnap', require: false
-gem 'whenever', :require => false
+#gem 'whenever', :require => false
 
 group :production do
   gem 'pg'
