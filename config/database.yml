@@ -13,6 +13,6 @@ test:
 
 production:
   adapter: postgresql
-  user: <%=  ENV['POSTGRES_USER_KEY'] %>
+  user: <%= ENV['POSTGRES_USER_KEY'] %>
   password: <%= ENV['POSTGRES_PASSWORD_KEY'] %>
   database: <%= ENV['POSTGRES_DATABASE_KEY'] %>
