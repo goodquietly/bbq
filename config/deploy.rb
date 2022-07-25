@@ -4,7 +4,7 @@ lock '~> 3.17.0'
 set :application, 'bbqgp'
 set :repo_url, 'git@github.com:goodquietly/bbq.git'
 
-# Default branch is :master
+Default branch is :main
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
