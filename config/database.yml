@@ -12,7 +12,10 @@ test:
   database: db/test.sqlite3
 
 production:
+  <<: *default
   adapter: postgresql
+  host: localhost
+  port: 5432
   user: <%= ENV['POSTGRES_USER_KEY'] %>
   password: <%= ENV['POSTGRES_PASSWORD_KEY'] %>
   database: <%= ENV['POSTGRES_DATABASE_KEY'] %>
