@@ -12,6 +12,7 @@ gem 'dotenv-rails'
 gem 'file_validators'
 gem 'sprockets-rails'
 gem 'puma', '~> 5.0'
+gem 'pundit'
 gem "image_processing", '~> 1.2'
 gem 'jquery-rails'
 gem 'jsbundling-rails'
@@ -37,6 +38,7 @@ group :development, :test do
   gem 'capistrano-rbenv', '~> 2.1'
   gem 'capistrano-bundler', '~> 1.2'
   gem 'sqlite3', '~> 1.4'
+  gem "rspec-rails"
   gem 'byebug'
   gem 'debug', platforms: %i[ mri mingw x64_mingw ]
 end

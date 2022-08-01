@@ -3,7 +3,7 @@
 
     <div class="card">
 
-      <% if current_user_can_edit?(photo) %>
+      <% if policy(photo).destroy? %>
 
         <div class='text-end'>
           <%= button_to "", 
