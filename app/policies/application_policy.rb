@@ -13,7 +13,7 @@ class ApplicationPolicy
   end
 
   def show?
-    true
+    false
   end
 
   def new?
@@ -21,7 +21,7 @@ class ApplicationPolicy
   end
 
   def create?
-    user.present?
+    true
   end
 
   def update?
@@ -29,7 +29,7 @@ class ApplicationPolicy
   end
 
   def edit?
-    current_user_can_edit?
+    false
   end
 
   def destroy?

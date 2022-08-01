@@ -3,11 +3,14 @@ class EventsController < ApplicationController
   before_action :password_guard!, only: [:show]
 
   def index
+    authorize Event
+
     @events = Event.all
   end
 
   def show
     authorize event
+
     @new_comment = event.comments.build(params[:comment])
     @new_subscription = event.subscriptions.build(params[:subscription])
     @new_photo = event.photos.build(params[:photo])
@@ -15,6 +18,8 @@ class EventsController < ApplicationController
 
   def new
     @event = current_user.events.build
+
+    authorize @event
   end
 
   def edit

@@ -20,6 +20,9 @@ ru:
       allowed_file_content_types: ! 'файл должен быть одним из %{types}'
       excluded_file_content_types: ! 'файл не может быть %{types}'
 
+  pundit:
+    not_authorized: 'Данное действие Вам запрещено!'
+
     attributes:
       user:
         email: 'Email'
