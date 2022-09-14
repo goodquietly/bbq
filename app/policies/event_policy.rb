@@ -4,7 +4,7 @@ class EventPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    password_guard!
   end
 
   def new?
@@ -17,5 +17,15 @@ class EventPolicy < ApplicationPolicy
 
   def edit?
     current_user_can_edit?
+  end
+
+  private
+
+  def password_guard!
+    return true if record.pincode.blank?
+    return true if user.present? && user == record.user
+    return true if record.pincode_valid?(cookies.permanent["events_#{record.id}_pincode"])
+
+    false
   end
 end
