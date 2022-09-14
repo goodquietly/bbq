@@ -24,7 +24,7 @@ class EventPolicy < ApplicationPolicy
   def password_guard!
     return true if record.pincode.blank?
     return true if user.present? && user == record.user
-    return true if record.pincode_valid?(cookies.permanent["events_#{record.id}_pincode"])
+    return true if record.pincode_valid?(cookies["events_#{record.id}_pincode"])
 
     false
   end
