@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: %i[show index]
+  before_action :add_pin_to_cookies, only: %i[show]
 
   def index
     authorize Event
@@ -8,10 +9,6 @@ class EventsController < ApplicationController
   end
 
   def show
-    if params[:pincode].present? && event.pincode_valid?(params[:pincode])
-      cookies.permanent["events_#{event.id}_pincode"] = params[:pincode]
-    end
-
     authorize event
 
     @new_comment = event.comments.build(params[:comment])
@@ -70,6 +67,12 @@ class EventsController < ApplicationController
   end
 
   private
+
+  def add_pin_to_cookies
+    if params[:pincode].present? && event.pincode_valid?(params[:pincode])
+      cookies.permanent["events_#{event.id}_pincode"] = params[:pincode]
+    end
+  end
 
   def event
     @event ||= Event.find(params[:id])
