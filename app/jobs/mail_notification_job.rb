@@ -4,7 +4,7 @@ class MailNotificationJob < ApplicationJob
   def perform(model)
     case model
     when Subscription
-      EventMailer.subscription(model).deliver_now
+      EventMailer.subscription(model).deliver_later
     end
   end
 end
