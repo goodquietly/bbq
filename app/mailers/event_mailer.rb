@@ -10,12 +10,12 @@ class EventMailer < ApplicationMailer
   def comment(comment, email)
     @comment = comment
 
-    mail(to: email, subject: default_i18n_subject(event_title: comment.event.title))
+    mail(to: email, subject: default_i18n_subject(event_title: @comment.event.title))
   end
 
   def photo(photo, email)
     @photo = photo
 
-    mail(to: email, subject: default_i18n_subject(event_title: photo.event.title))
+    mail(to: email, subject: default_i18n_subject(event_title: @photo.event.title))
   end
 end
