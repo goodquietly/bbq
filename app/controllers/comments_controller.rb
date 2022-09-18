@@ -9,7 +9,6 @@ class CommentsController < ApplicationController
 
     if @new_comment.save
       MailNotificationJob.perform_later(@new_comment)
-      # notify_subscribers(@new_comment)
 
       redirect_to @event, notice: I18n.t('controllers.comments.created')
     else
@@ -38,12 +37,4 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:body, :user_name)
   end
-
-  # def notify_subscribers(comment)
-  #   all_emails = (comment.event.subscriptions.map(&:user_email) + [comment.event.user.email]).uniq - [comment.user&.email]
-
-  #   all_emails.each do |mail|
-  #     EventMailer.comment(comment, mail).deliver_now
-  #   end
-  # end
 end
