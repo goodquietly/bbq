@@ -58,4 +58,8 @@ module ApplicationHelper
   def fa_icon(icon_class)
     content_tag 'i', '', class: "text-danger bi bi-#{icon_class}"
   end
+
+  def fa_icon_provider(icon_class, provider)
+    content_tag 'i', provider, class: icon_class
+  end
 end
