@@ -1,18 +1,18 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def vkontakte
-    service_provider('Vkontakte')
+    service_provider(t('controllers.devise.vkontakte'))
   end
 
   def github
-    service_provider('GitHub')
+    service_provider(t('controllers.devise.github'))
   end
 
   def yandex
-    service_provider('Yandex')
+    service_provider(t('controllers.devise.yandex'))
   end
 
   def google_oauth2
-    service_provider('Google')
+    service_provider(t('controllers.devise.google'))
   end
 
   def failure
@@ -27,7 +27,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
       sign_in_and_redirect user, event: :authentication
     else
-      session["devise.#{name.downcase}_data"] = request.env['omniauth.auth']
+      session[t('controllers.devise.session', name: name.downcase)] = request.env['omniauth.auth']
 
       redirect_to new_user_registration_url
     end

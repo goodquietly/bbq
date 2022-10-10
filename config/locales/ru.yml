@@ -40,6 +40,12 @@ ru:
         photo: 'Фотография'
 
   controllers:
+    devise:
+      vkontakte: 'Вконтакте'
+      github: 'GitHub'
+      yandex: 'Яндекс'
+      google: 'Google'
+      session: 'devise.%{name}_data'
     events:
       created: 'Вы создали новое мероприятие'
       updated: 'Вы обновили мероприятие'
@@ -98,6 +104,13 @@ ru:
       password: 'Пароль'
       name: 'Имя'
       email: 'name@example.com'
+      using_multi_account: 'Или с помощью:'
+      vkontakte: 'Вконтакте'
+      vkontakte_short: 'Vk'
+      github: 'GitHub'
+      yandex: 'Яндекс'
+      yandex_short: 'Я'
+      google: 'Google'
 
     events:
       new_event: 'Создать событие'
