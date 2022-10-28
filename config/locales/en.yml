@@ -138,6 +138,7 @@ en:
       download: 'Download'
       downloader: 'Added by'
       destroy_confirm: 'Are you sure you want to delete this photo?'
+      add_photo: 'Add your photo to the collection!'
 
     users:
       save: 'Save'

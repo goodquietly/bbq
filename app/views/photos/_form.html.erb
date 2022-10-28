@@ -2,11 +2,11 @@
     <%= render partial: 'partials/form_errors', locals: {model: photo} %>
 
     <div class="form-group mb-3">
-      <%= f.label :photo, class: "form-label", for: "customFile" %>
+      <%= f.label t('views.photos.add_photo'), class: "form-label", for: "customFile" %>
       <%= f.file_field :photo, type: "file", class: "form-control", id: "customFile" %>
     </div>
 
     <div class="actions">
-      <%= f.submit t('views.photos.download'), class: 'btn btn-primary' %>
+      <%= f.submit t('views.photos.download'), class: 'btn btn-info' %>
     </div>
   <% end %>
