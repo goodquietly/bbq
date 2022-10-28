@@ -1,20 +1,26 @@
 Rails.application.routes.draw do
-  resources :photos
-  resources :subscriptions
-  resources :comments
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_for :users, only: :omniauth_callbacks, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  get '/users', to: 'static_pages#users'
+  scope '(:locale)', locale: /#{I18n.available_locales.join("|")}/ do
+    devise_for :users, skip: :omniauth_callbacks
 
-  root to: 'events#index'
+    resources :photos
+    resources :subscriptions
+    resources :comments
 
-  resources :events do
-    resources :comments, only: %i[create destroy]
-    resources :subscriptions, only: %i[create destroy]
-    resources :photos, only: %i[create destroy]
+    get '/users', to: 'static_pages#users'
 
-    post :show, on: :member
+    root to: 'events#index'
+
+    resources :events do
+      resources :comments, only: %i[create destroy]
+      resources :subscriptions,
+                only: %i[create destroy]
+      resources :photos, only: %i[create destroy]
+
+      post :show, on: :member
+    end
+
+    resources :users, only: %i[show edit update]
   end
-
-  resources :users, only: %i[show edit update]
 end

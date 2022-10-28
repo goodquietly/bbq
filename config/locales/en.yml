@@ -1,33 +1,176 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   "true": "foo"
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      user: 'User'
+      event: 'Event'
+      photo: 'Photo'
+      comrade: 'Comrade №'
+      errors:
+        event_owner: 'You are the creator of the event!'
+        email_is_busy: 'This mail is already assigned to the user'
+
+    attributes:
+      user:
+        email: 'Email'
+        name: 'Name'
+        avatar: 'Avatar'
+        password: 'Password'
+        password_confirmation: 'Password confirmation'
+      event:
+        title: 'Title'
+        address: 'Location'
+        datetime: 'Date and time'
+        description: 'Description'
+        pincode: 'Security pincode'
+      photo:
+        photo: 'Photo'
+
+  errors:
+    messages:
+      file_size_is_in: ! 'file size must be between %{min} and %{max}'
+      file_size_is_less_than: ! 'file size must be less than %{count}'
+      file_size_is_less_than_or_equal_to: ! 'file size must be less than or equal to %{count}'
+      file_size_is_greater_than: ! 'file size must be greater than %{count}'
+      file_size_is_greater_than_or_equal_to: ! 'file size must be greater than or equal to %{count}'
+
+      allowed_file_content_types: ! 'file should be one of %{types}'
+      excluded_file_content_types: ! 'file cannot be %{types}'
+
+  pundit:
+    not_authorized: 'This action is prohibited!'
+
+  controllers:
+    devise:
+      vkontakte: 'Vkontakte'
+      github: 'GitHub'
+      yandex: 'Yandex'
+      google: 'Google'
+      session: 'devise.%{name}_data'
+    events:
+      created: 'You have created a new event'
+      updated: 'You have updated the event'
+      destroyed: 'You have deleted the event :('
+      wrong_pincode: 'Wrong pin code!'
+    users:
+      updated: 'You have updated your profile'
+    comments:
+      destroyed: 'Comment deleted'
+      created: 'Your comment has been added'
+      error: 'Error with comment'
+    subscriptions:
+      created: 'You are subscribed to this event'
+      destroyed: 'User has been unsubscribed'
+      error: 'Subscribe/unsubscribe failed'
+    photos:
+      error: 'Something wrong with the photo'
+      created: 'You added a photo to the event'
+      destroyed: 'You deleted your photo'
+
+  app:
+    name: 'BBQ'
+    language: 'English'
+    russian: 'Russian'
+    english: 'English'
+    profile: 'Profile'
+    exit: 'Exit'
+    sign_in: 'Sign in'
+    sign_up: 'Sign up'
+    company: 'Goodprogrammer'
+
+    errors:
+      one: 'There is %{count} error in your form'
+      other: 'There are %{count} errors in your form'
+
+    are_you_sure: 'Are you sure you want to delete this event?'
+
+  views:
+    comments:
+      body: 'Comment text'
+      user_name: 'Username'
+      submit: 'Send'
+      leave_a_comment: 'Leave a comment here'
+      leave_a_username: 'Leave your name here'
+
+      comment:
+        destroy_confirm: 'Are you sure you want to delete this comment?'
+
+    subscriptions:
+      user_name: 'Username'
+      user_email: 'User email'
+      submit: 'Subscribe'
+      subscription:
+        destroy_confirm: 'Are you sure you want to delete this subscription?'
+
+    devise:
+      edit_title: 'Profile editing'
+      password: 'Password'
+      name: 'Name'
+      email: 'name@example.com'
+      using_multi_account: 'Or with help:'
+      vkontakte: 'Vkontakte'
+      vkontakte_short: 'Vk'
+      github: 'GitHub'
+      yandex: 'Yandex'
+      yandex_short: 'Я'
+      google: 'Google'
+
+    events:
+      new_event: 'Create event'
+      events: 'Events'
+      back: 'Return'
+      save: 'Save'
+      edit: 'Edit'
+      delete: 'Delete'
+      delete_event: 'Delete event'
+      edit_title: 'Editing an event'
+      invites: 'Invites:'
+      will_come: 'Will go:'
+      empty: 'No one yet, add!'
+      i_will_go: 'I will go:'
+      pincode_only: 'PIN only access'
+      pincode: 'PIN'
+      enter: 'Enter'
+      to_main: 'To main'
+      leave_a_description: 'Leave a description here'
+      leave_a_pincode: 'Leave your PIN here'
+
+    photos:
+      download: 'Download'
+      downloader: 'Added by'
+      destroy_confirm: 'Are you sure you want to delete this photo?'
+
+    users:
+      save: 'Save'
+      back: 'Back'
+      change_password: 'Change password'
+      edit_title: 'Profile editing'
+      edit_profile: 'Edit profile'
+      organized: 'Organized by:'
+      did_not_organize_anything: 'The user has not organized any events yet'
+
+  event_mailer:
+    comment:
+      title: 'New comment'
+      author: 'Author'
+      event: 'Event'
+      datetime: 'Will take place'
+      owner: 'Organizer'
+      subject: 'New comment @ %{event_title}'
+
+    subscription:
+      title: 'New subscription'
+      name: 'Name'
+      email: 'Email'
+      author: 'Author'
+      event: 'Event'
+      datetime: 'Will take place'
+      owner: 'Organizer'
+      subject: 'New subscription %{event_title}'
+
+    photo:
+      title: 'New photo'
+      author: 'Author'
+      event: 'Event'
+      datetime: 'Will take place'
+      owner: 'Organizer'
+      subject: 'New photo %{event_title}'
