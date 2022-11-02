@@ -1,0 +1,27 @@
+<p><%= t('views.devise.using_multi_account')%></p>
+<div class="d-flex mb-3">
+  <% button_to fa_icon_provider('text-primary fw-bold', t('views.devise.vkontakte_short')), 
+              user_vkontakte_omniauth_authorize_path,
+              method: :post, 
+              data: { turbo: false }, 
+              title:  t('views.devise.vkontakte'), 
+              class: 'btn img-icon-small btn-outline-secondary' %>
+  <%= button_to fa_icon_provider('text-dark bi bi-github', ''), 
+              user_github_omniauth_authorize_path,
+              method: :post, 
+              data: { turbo: false }, 
+              title: t('views.devise.github'), 
+              class: 'btn img-icon-small btn-outline-secondary ms-1' %>
+  <%= button_to fa_icon_provider('text-danger fw-bold', t('views.devise.yandex_short')), 
+              user_yandex_omniauth_authorize_path,
+              method: :post, 
+              data: { turbo: false },
+              title: t('views.devise.yandex'),  
+              class: 'btn img-icon-small btn-outline-secondary ms-1' %>
+  <% button_to fa_icon_provider('text-primary bi bi-google', ''), 
+              user_google_oauth2_omniauth_authorize_path,
+              method: :post, 
+              data: { turbo: false }, 
+              title: t('views.devise.google'), 
+              class: 'btn img-icon-small btn-outline-secondary ms-1' %>
+</div>

@@ -1,31 +1,7 @@
+<div class="actions mb-3">
+
   <%- if devise_mapping.omniauthable? %>
-    <p><%= t('views.devise.using_multi_account')%></p>
-    <div class="d-flex mb-3">
-      <%= button_to fa_icon_provider('text-primary fw-bold', t('views.devise.vkontakte_short')), 
-                  user_vkontakte_omniauth_authorize_path,
-                  method: :post, 
-                  data: { turbo: false }, 
-                  title:  t('views.devise.vkontakte'), 
-                  class: 'btn img-icon-small btn-outline-secondary' %>
-      <%= button_to fa_icon_provider('text-dark bi bi-github', ''), 
-                  user_github_omniauth_authorize_path,
-                  method: :post, 
-                  data: { turbo: false }, 
-                  title: t('views.devise.github'), 
-                  class: 'btn img-icon-small btn-outline-secondary ms-1' %>
-      <%= button_to fa_icon_provider('text-danger fw-bold', t('views.devise.yandex_short')), 
-                  user_yandex_omniauth_authorize_path,
-                  method: :post, 
-                  data: { turbo: false },
-                  title: t('views.devise.yandex'),  
-                  class: 'btn img-icon-small btn-outline-secondary ms-1' %>              
-      <%= button_to fa_icon_provider('text-primary bi bi-google', ''), 
-                  user_google_oauth2_omniauth_authorize_path,
-                  method: :post, 
-                  data: { turbo: false }, 
-                  title: t('views.devise.google'), 
-                  class: 'btn img-icon-small btn-outline-secondary ms-1' %>
-    </div>
+    <%= render partial: 'devise/shared/providers' %>
   <% end %>
   
   <%- if controller_name != 'sessions' %>
@@ -39,3 +15,5 @@
   <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
     <%= link_to t(".forgot_your_password"), new_password_path(resource_name), class: "btn btn-warning mb-3" %><br />
   <% end %>
+  
+</div>

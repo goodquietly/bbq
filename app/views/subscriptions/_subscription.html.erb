@@ -1,20 +1,20 @@
 <span class="subscription">
-    <div class="d-flex align-items-center justify-content-center">
+  <div class="d-flex align-items-center justify-content-center">
 
-      <% if subscription.user.present? %>
-        <%= render partial: 'users/user', object: subscription.user %>
-      <% else %>
-        <em><%= subscription.user_name %></em>
-      <% end %>
+    <% if subscription.user.present? %>
+      <%= render partial: 'users/user', object: subscription.user %>
+    <% else %>
+      <em><%= subscription.user_name %></em>
+    <% end %>
 
-      <% if policy(subscription).destroy? %>
-        <%= button_to fa_icon('x-circle-fill'),
-                  event_subscription_path(subscription.event, subscription),
-                  form: {data: {turbo_confirm: t('views.subscriptions.subscription.destroy_confirm')}},
-                  method: :delete,
-                  aria_label: "Close",
-                  class: 'btn'%>
-      <% end %>
-      
-    </div>
-  </span>
+    <% if policy(subscription).destroy? %>
+      <%= button_to fa_icon('x-circle-fill'),
+                event_subscription_path(subscription.event, subscription),
+                form: {data: {turbo_confirm: t('views.subscriptions.subscription.destroy_confirm')}},
+                method: :delete,
+                aria_label: "Close",
+                class: 'btn'%>
+     <% end %>
+    
+  </div>
+</span>

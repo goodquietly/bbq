@@ -1,29 +1,29 @@
-  <h3><%= t('.sign_in') %></h3>
+<h3><%= t('.sign_in') %></h3>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-floating mb-3 col-md-6">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", 
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-floating mb-3 col-md-6">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", 
           placeholder: t('views.devise.email'), id: "floatingInput", class: "form-control" %>
-      <%= f.label :email, for: "floatingInput" %>
-    </div>
+    <%= f.label :email, for: "floatingInput" %>
+  </div>
 
-    <div class="form-floating mb-3 col-md-6">
-      <%= f.password_field :password, autocomplete: "current-password", 
+  <div class="form-floating mb-3 col-md-6">
+    <%= f.password_field :password, autocomplete: "current-password", 
       class: "form-control", id: "floatingPassword", placeholder: t('views.devise.password') %>
-      <%= f.label :password, for: "floatingPassword" %>
-    </div>
+    <%= f.label :password, for: "floatingPassword" %>
+  </div>
 
-    <% if devise_mapping.rememberable? %>
-      <div class="mb-3 form-check">
-        <%= f.check_box :remember_me, checked: true, class: "form-check-input", type: "checkbox",
+  <% if devise_mapping.rememberable? %>
+  <div class="mb-3 form-check">
+    <%= f.check_box :remember_me, checked: true, class: "form-check-input", type: "checkbox",
          value: "", id: "flexCheckChecked", checked: true %>
-        <%= f.label :remember_me, class: "form-check-label", for: "flexCheckChecked" %>
-      </div>
-    <% end %>
-
-    <div class="actions mb-3">
-      <%= f.submit t('.sign_in'), class: 'btn btn-info' %>
-    </div>
+    <%= f.label :remember_me, class: "form-check-label", for: "flexCheckChecked" %>
+  </div>
   <% end %>
 
-  <%= render "devise/shared/links" %>
+  <div class="actions mb-3">
+    <%= f.submit t('.sign_in'), class: 'btn btn-info' %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
