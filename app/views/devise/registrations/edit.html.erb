@@ -1,52 +1,57 @@
-  
-  <h3><%= t('views.devise.edit_title') %></h3>
+<h3 class='text-center mb-5'><%= t('views.devise.edit_title') %></h3>
+<div class="row justify-content-center">
+  <div class='col-md-6'> 
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
-
-    <div class="form-floating mb-3 col-md-6">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", 
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="form-floating mb-3">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", 
           placeholder: t('views.devise.email'), id: "floatingInput", class: "form-control" %>
-      <%= f.label :email, for: "floatingInput" %>
-    </div>
+        <%= f.label :email, for: "floatingInput" %>
+      </div>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div><%= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></div>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div><%= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></div>
+      <% end %>
+
+      <div class="form-floating mb-3">
+        <%= f.password_field :password, autocomplete: "new-password", 
+          class: "form-control", id: "floatingPassword", placeholder: t('views.devise.password') %>
+
+        <% if @minimum_password_length %>
+        <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
+        <% end %>
+
+        <%= f.label :password, for: "floatingPassword" %><i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)</i>
+      </div>
+
+      <div class="form-floating mb-3">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", 
+          class: "form-control", id: "floatingPassword", placeholder: t('views.devise.password') %>
+        <%= f.label :password_confirmation, for: "floatingPassword" %>
+      </div>
+
+      <div class="form-floating mb-3">
+        <%= f.password_field :current_password, autocomplete: "current-password", 
+          class: "form-control", id: "floatingPassword", placeholder: t('views.devise.password') %>
+        <%= f.label :current_password, for: "floatingPassword" %>
+        <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)</i><br />
+      </div>
+
+      <div class="actions mb-3">
+        <%= f.submit t('.update'), class: 'btn btn-info mb-3' %>
+      </div>
     <% end %>
 
-    <div class="form-floating mb-3 col-md-6">
-      <%= f.password_field :password, autocomplete: "new-password", 
-      class: "form-control", id: "floatingPassword", placeholder: t('views.devise.password') %>
-      <% if @minimum_password_length %>
-        <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
-      <% end %>
-      <%= f.label :password, for: "floatingPassword" %><i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)</i>
-    </div>
+      <h3><%= t('.cancel_my_account') %></h3>
 
-    <div class="form-floating mb-3 col-md-6">
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", 
-      class: "form-control", id: "floatingPassword", placeholder: t('views.devise.password') %>
-      <%= f.label :password_confirmation, for: "floatingPassword" %>
-    </div>
+      <div class="actions mb-3">
+        <%= t('.unhappy') %><%= button_to t('.cancel_my_account'), registration_path(resource_name), 
+        method: :delete, class: 'btn btn-danger mb-3 mt-1', form: {data: {turbo_confirm: t('.are_you_sure')}} %>
+      </div>
 
-    <div class="form-floating mb-3 col-md-6">
-      <%= f.password_field :current_password, autocomplete: "current-password", 
-      class: "form-control", id: "floatingPassword", placeholder: t('views.devise.password') %>
-      <%= f.label :current_password, for: "floatingPassword" %><i>(<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)</i><br />
-    </div>
-
-    <div class="actions mb-3">
-      <%= f.submit t('.update'), class: 'btn btn-info mb-3' %>
-    </div>
-  <% end %>
-
-  <h3><%= t('.cancel_my_account') %></h3>
-
-  <div class="actions mb-3">
-    <%= t('.unhappy') %><%= button_to t('.cancel_my_account'), registration_path(resource_name), form: {data: {turbo_confirm: t('.are_you_sure')}}, 
-    method: :delete, class: 'btn btn-danger mb-3 mt-1' %>
+      <div class="actions mb-3">
+        <%= link_to t('devise.shared.links.back'), :back, class: 'btn btn-warning mb-3' %>
+      </div>
   </div>
-
-  <div class="actions mb-3">
-    <%= link_to t('devise.shared.links.back'), :back, class: 'btn btn-warning mb-3' %>
-  </div>
+</div>
