@@ -4,6 +4,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+  rescue StandardError
+    redirect_to root_path, alert: I18n.t('controllers.users.not_page')
   end
 
   def edit; end

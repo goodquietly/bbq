@@ -53,6 +53,7 @@ en:
       wrong_pincode: 'Wrong pin code!'
     users:
       updated: 'You have updated your profile'
+      not_page: 'Данная страница не существует, либо недоступна для Вас'
     comments:
       destroyed: 'Comment deleted'
       created: 'Your comment has been added'
