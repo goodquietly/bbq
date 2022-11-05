@@ -18,7 +18,7 @@
               data: { turbo: false },
               title: t('views.devise.yandex'),  
               class: 'btn img-icon-small btn-outline-secondary ms-1' %>
-  <% button_to fa_icon_provider('text-primary bi bi-google', ''), 
+  <%= button_to fa_icon_provider('text-primary bi bi-google', ''), 
               user_google_oauth2_omniauth_authorize_path,
               method: :post, 
               data: { turbo: false }, 
