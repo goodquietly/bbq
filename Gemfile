@@ -45,7 +45,7 @@ group :development, :test do
   gem 'capistrano-bundler', '~> 1.2'
   gem 'capistrano-resque', '~> 0.2.3', require: false
   gem 'debug', platforms: %i[ mri mingw x64_mingw ]
-  gem "letter_opener"
+  gem "letter_opener", group: :development 
   gem 'rspec-rails'
   gem 'sqlite3', '~> 1.4'
 end
