@@ -4,7 +4,8 @@ class Subscription < ApplicationRecord
 
   validates :event, presence: true
 
-  validates :user_name, presence: true, unless: -> { user.present? }
+  validates :user_name, presence: true, length: { maximum: 25 },
+                        format: { with: /\A[а-яА-Яa-zA-Z\s]+\z/i }, unless: -> { user.present? }
   validates :user_email, presence: true, format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/,
                          unless: -> { user.present? }
 
