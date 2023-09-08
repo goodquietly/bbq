@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: %i[show index]
-  before_action :add_pin_to_cookies, only: %i[show]
+  before_action :add_pin_to_cookies, only: :show
 
   def index
     authorize Event
