@@ -4,7 +4,7 @@
   <p><%= t('.author') %>: 
     <strong>
       <% if @comment.user.present?%>
-        <%= link_to @comment.user_name, user_url(@comment.user) %>
+        <%= link_to @comment.user_name, user_url(id: @comment.user) %>
       <% else %>
         <strong><%= @comment.user_name %></strong>
       <% end %>
@@ -14,11 +14,11 @@
   <hr/>
 
   <%= t('.event') %>
-  <h3><strong><%= link_to @comment.event.title, event_url(@comment.event) %></strong>
+  <h3><strong><%= link_to @comment.event.title, event_url(id: @comment.event) %></strong>
   </h3>
 
   <%= t('.datetime') %>
   <h4><%= l(@comment.event.datetime, format: :short) %></h4>
 
   <%= t('.owner') %>
-  <h4><%= link_to @comment.event.user.name, user_url(@comment.event.user) %></h4>
+  <h4><%= link_to @comment.event.user.name, user_url(id: @comment.event.user) %></h4>

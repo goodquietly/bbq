@@ -2,17 +2,17 @@
   <h1><%= t('.title') %></h1>
   <p><%= link_to image_tag(@photo.photo.variant(:thumb).processed.url), @photo.photo.url %></p>
   <p><%= t('.author') %>: 
-    <strong><%= link_to @photo.user.name, user_url(@photo.user) %></strong>
+    <strong><%= link_to @photo.user.name, user_url(id: @photo.user) %></strong>
   </p>
 
   <hr/>
 
   <%= t('.event') %>
-  <h3><strong><%= link_to @photo.event.title, event_url(@photo.event) %></strong>
+  <h3><strong><%= link_to @photo.event.title, event_url(id: @photo.event) %></strong>
   </h3>
 
   <%= t('.datetime') %>
   <h4><%= l(@photo.event.datetime, format: :short) %></h4>
 
   <%= t('.owner') %>
-  <h4><%= link_to @photo.event.user.name, user_url(@photo.event.user) %></h4>
+  <h4><%= link_to @photo.event.user.name, user_url(id: @photo.event.user) %></h4>
